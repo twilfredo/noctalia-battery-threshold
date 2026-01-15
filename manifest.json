@@ -5,7 +5,7 @@
   "minNoctaliaVersion": "3.6.0",
   "author": "Wilfred Mallawa",
   "license": "MIT",
-  "repository": "https://github.com/yourusername/noctalia-plugins",
+  "repository": "https://github.com/twilfredo/noctalia-battery-threshold",
   "description": "Set the battery threshold for laptop batteries to extend battery lifespan",
   "tags": ["Bar", "Battery", "Power"],
   "entryPoints": {
