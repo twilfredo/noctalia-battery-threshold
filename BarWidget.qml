@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Layouts
 import Quickshell
 import qs.Commons
 import qs.Widgets
@@ -17,11 +16,6 @@ Rectangle {
 
     color: Style.capsuleColor
     radius: Style.radiusL
-
-    BatteryThresholdService {
-        id: service
-        pluginApi: root.pluginApi
-    }
 
     NText {
         id: contentRow

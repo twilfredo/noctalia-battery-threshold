@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Io
 import qs.Commons
 import qs.Widgets
@@ -148,8 +147,6 @@ Item {
                                + thresholdSlider.availableHeight / 2 - height / 2
                             implicitWidth: 20
                             implicitHeight: 20
-                            width: 20
-                            height: 20
                             radius: 10
                             color: thresholdSlider.pressed ? Color.mOnSurfaceVariant : (thresholdSlider.enabled ? Color.mPrimary : Color.mOutline)
                             border.color: thresholdSlider.enabled ? Color.mOnPrimary : Color.mOutline
