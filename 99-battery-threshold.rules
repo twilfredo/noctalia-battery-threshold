@@ -1,0 +1,10 @@
+# Battery Threshold Control - udev rule
+# Grants write access to charge_control_end_threshold for users in the 'wheel' group
+#
+# Installation:
+#   sudo cp 99-battery-threshold.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+
+SUBSYSTEM=="power_supply", KERNEL=="BAT*", ATTR{charge_control_end_threshold}=="*", \
+    RUN+="/bin/chmod 0664 /sys%p/charge_control_end_threshold", \
+    RUN+="/bin/chgrp wheel /sys%p/charge_control_end_threshold"
