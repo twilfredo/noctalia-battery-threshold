@@ -17,13 +17,12 @@ Rectangle {
     color: Style.capsuleColor
     radius: Style.radiusL
 
-    NText {
+    NIcon {
         id: contentRow
         anchors.centerIn: parent
-        text: "Battery Threshold"
-        color: mouseArea.containsMouse ? Color.mOnHover : Color.mPrimary
-        pointSize: Style.barFontSize
-        font.weight: Font.Medium
+        icon: "charging-pile"
+        applyUiScale: false
+        color: mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
     }
 
     MouseArea {
