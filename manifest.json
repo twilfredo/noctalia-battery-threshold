@@ -9,6 +9,7 @@
   "description": "Set the battery threshold for laptop batteries to extend battery lifespan",
   "tags": ["Bar", "Battery", "Power"],
   "entryPoints": {
+    "main": "Main.qml",
     "barWidget": "BarWidget.qml",
     "panel": "Panel.qml"
   },
