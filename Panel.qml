@@ -20,6 +20,18 @@ Item {
         pluginApi: root.pluginApi
     }
 
+    property string batteryModelName: ""
+
+    FileView {
+        id: modelNameView
+        path: "/sys/class/power_supply/BAT0/model_name"
+        printErrors: false
+
+        onLoaded: {
+            root.batteryModelName = text().trim()
+        }
+    }
+
     function writeThreshold(value) {
         if (!service.isWritable)
             return
@@ -66,8 +78,10 @@ Item {
                 }
 
                 NText {
-                    text: service.isAvailable ? "Limit charging to extend battery lifespan" : "Not available on this system"
-                    pointSize: Style.fontSizeXS
+                    visible: !service.isAvailable
+                             || root.batteryModelName !== ""
+                    text: !service.isAvailable ? "Not available on this system" : root.batteryModelName
+                    pointSize: Style.fontSizeM
                     color: Color.mOnSurfaceVariant
                 }
             }
