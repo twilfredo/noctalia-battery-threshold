@@ -193,16 +193,6 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                 }
             }
-
-            NText {
-                Layout.fillWidth: true
-                visible: !service.isAvailable
-                text: "Your system does not support battery threshold control"
-                pointSize: Style.fontSizeS
-                color: Color.mOnSurfaceVariant
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.WordWrap
-            }
         }
     }
 }
