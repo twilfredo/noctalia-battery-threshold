@@ -27,48 +27,19 @@ Add the bar widget to your bar. Click to open the panel and adjust the battery t
 
 ## Setup (Required)
 
-This plugin requires write access to the battery threshold file. Follow these steps to enable it:
-
-### Step 1: Check group for your distro
-
-The included udev rule uses the `wheel` group (Fedora/RHEL).
-
-**For Debian/Ubuntu:** Edit `99-battery-threshold.rules` and change `wheel` to `plugdev` before installing.
-
-### Step 2: Install udev rule
-
-Copy the rule file to `/etc/udev/rules.d/`:
+This plugin requires write access to the battery threshold sysfs file. The included `setup_rules.sh` script configures a udev rule that grants write permission to members of the `battery_ctl` group:
 
 ```bash
-sudo cp 99-battery-threshold.rules /etc/udev/rules.d/
+$ sudo ./setup_rules.sh
 ```
 
-### Step 3: Reload udev rules
+This script will:
+- Create a `battery_ctl` group (if it doesn't exist)
+- Add your user to the `battery_ctl` group
+- Install the udev rule to `/etc/udev/rules.d/`
+- Reload udev rules
 
-```bash
-sudo udevadm control --reload-rules
-sudo udevadm trigger --subsystem-match=power_supply
-```
-
-### Step 4: Verify group membership
-
-Check your groups:
-```bash
-groups
-```
-
-If needed, add yourself to the appropriate group:
-```bash
-# Fedora/RHEL
-sudo usermod -aG wheel $USER
-
-# Debian/Ubuntu
-sudo usermod -aG plugdev $USER
-```
-
-### Step 5: Log out and back in
-
-Group changes require a new login session to take effect.
+**Note:** A reboot may be required for write access to take effect.
 
 ## Troubleshooting
 
