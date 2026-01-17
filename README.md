@@ -9,7 +9,11 @@ A plugin for Noctalia Shell to control the battery threshold on laptops, helping
 - **Bar Widget**: Shows current battery threshold in the bar
 - **Panel**: Adjust battery threshold with a slider (40-100%)
 - **Persistent Settings**: Saves and restores threshold across reboots
-- **Auto-detection**: Automatically detects BAT0 or BAT1
+
+## Limitations
+
+- Currently supports only the primary battery, which this plugin expects to
+  have exposed as BAT0 by sysfs.
 
 ## Usage
 
