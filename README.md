@@ -1,3 +1,5 @@
+# ARCHIVED: This plugin has been merged [upstream](https://github.com/noctalia-dev/noctalia-plugins/pull/98)
+
 # Battery Threshold
 
 A plugin for Noctalia Shell to control the battery threshold on laptops, helping extend battery lifespan. This plugin only works if your laptop supports charge threshold control (as exported by the kernel in sysfs). The plugin looks like this in action:
